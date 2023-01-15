@@ -15,11 +15,14 @@ $(function () {
     let hours = $(this).parent().attr('id')
     // value of local storage pair
     let inputValue = $(this).siblings('.description').val()
-
     // save info to local storage
     localStorage.setItem(hours, inputValue)
-
-
+    // give confirmation for booked time slot
+    $('#confirmation').addClass('show')
+    // hide confirmation message after 3 seconds
+    setTimeout(function () {
+      $('#confirmation').removeClass('show')
+    }, 3000)
   })
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -51,7 +54,7 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
+  
   // TODO: Add code to display the current date in the header of the page.
   let today = dayjs().format('dddd, MMMM D, YYYY');
   $('#currentDay').text(today)
