@@ -14,7 +14,7 @@ $(function () {
     // key of local storage pair
     let hours = $(this).parent().attr('id')
     // value of local storage pair
-    let inputValue = $(this).siblings('description').val()
+    let inputValue = $(this).siblings('.description').val()
 
     // save info to local storage
     localStorage.setItem(hours, inputValue)
